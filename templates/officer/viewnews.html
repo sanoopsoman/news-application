@@ -1,0 +1,182 @@
+{%  extends 'officer/officerbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <center><h2>News..</h2></center>
+</div>
+<br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  {% for i in news %}
+  {% if i.status == "pending" %}
+  <div class="col">
+    <div class="card h-100">
+     
+      <img src="/static/media/{{i.img}}" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text">
+          {{i.description}}
+        </p>
+      </div>
+      <div class="card-footer">
+        <center>
+        <a href="/viewnewsaction?id={{i.id}}&status=accepted" class="btn btn-primary">Approve</a>
+        <a href="/officerdeletenews?id={{i.id}}" class="btn btn-primary">Delete</a>
+      </center>
+       
+      </div>
+    
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+<br><br>
+<div class="container">
+  <center><h2>Approved News..</h2></center>
+</div>
+<br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  {% for i in news %}
+  {% if i.status == "accepted" %}
+  <div class="col">
+    <div class="card h-100">
+     
+      <img src="/static/media/{{i.img}}" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text">
+          {{i.description}}
+        </p>
+      </div>
+      <div class="card-footer">
+        <center>
+          <a href="/viewnewsaction?id={{i.id}}&status=flash" class="btn btn-primary">Flash news</a>
+        <a href="/viewnewsaction?id={{i.id}}&status=pending" class="btn btn-primary">Reject</a>
+     
+      </center>
+       
+      </div>
+      
+    </div>
+  </div>
+  {%endif %}
+    {% endfor %}
+</div>
+<br>
+<br>
+<div class="container">
+  <center><h2>Flash News..</h2></center>
+</div>
+<br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          This is a wider card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div> -->
+  {% for i in news %}
+  {% if i.status == "flash" %}
+  <div class="col">
+    <div class="card h-100">
+     
+      <img src="/static/media/{{i.img}}" class="card-img-top" alt="Palm Springs Road"/>
+      <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text">
+          {{i.description}}
+        </p>
+      </div>
+      <div class="card-footer">
+        <center>
+        <a href="/viewnewsaction?id={{i.id}}&status=pending" class="btn btn-primary">Reject</a>
+     
+      </center>
+       
+      </div>
+      
+    </div>
+  </div>
+  {%endif %}
+    {% endfor %}
+</div>
+{% endblock %}

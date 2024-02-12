@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Form Example</title>
+    <style>
+        /* Initially hide the form */
+        #commentForm {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <!-- Comment icon to trigger the form -->
+    <i class="fas fa-comment" onclick="toggleCommentForm()"></i>
+
+    <!-- Comment form -->
+    <div id="commentForm">
+        <form>
+            <label for="comment">Comment:</label>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    
+
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script>
+        function toggleCommentForm() {
+            var commentForm = document.getElementById('commentForm');
+            // Toggle the display property (show/hide the form)
+            commentForm.style.display = (commentForm.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</

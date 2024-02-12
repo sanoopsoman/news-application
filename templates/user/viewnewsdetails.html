@@ -1,0 +1,184 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block content %}
+{% for i in news %}
+<div class="card mb-3">
+    <img src="/static/media/{{i.img}}" class="card-img-top" alt="Wild Landscape"/>
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <p class="card-text">
+      {{i.description}}
+      </p>
+      <p class="card-text">
+        <form method="post">
+          <input type="hidden" name="nid" value={{i.id}}>
+     
+          <input type="hide" name="uid" value={{i.uid}}>
+          
+          
+       <center><h3 style="padding:5px;"><i class="fas fa-comment interaction-icons" onclick="toggleCommentForm({{i.id}})"></i><button type="submit" ><i class="fas fa-thumbs-up interaction-icons"></i></button>
+        <i class="fas fa-thumbs-down interaction-icons" ><span id="dislikeCount"></i>
+        <span class="flag-icon" onclick="showReportForm({{i.id}})">🚩</span></h3>
+       
+           
+    </center>
+        <h3> </h3>
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+  {% comment %} <i class="fas fa-comment" onclick="toggleCommentForm()"></i> {% endcomment %}
+
+  <!-- Comment form -->
+  <div id="commentForm">
+    {% comment %} <table>
+      <tr>
+      <th>username</th>
+      <th style="padding:15px;">comment<th>
+      </tr>
+      <tr>
+        {% for i in comment %}
+        <td>{{i.uid.name}}</td>
+        <td>{{i.comment}}</td>
+        {% endfor %}
+      </tr>
+    </table> {% endcomment %}
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+          <div class="card-body p-4">
+            {% for i in comment %}
+             <div class="card">
+              <div class="card-body">
+                <p>{{i.comment}}</p>
+    
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex flex-row align-items-center">
+                    <img src="/static/media/{{i.uid.img}}" alt="avatar" width="50" height="50" />
+                    <p class="small mb-0 ms-2">{{i.uid.name}}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+      <form method="POST" >
+        {% csrf_token %}
+         <center>
+          <textarea id="comment" name="comment" placeholder="comments"  rows="4" cols="50" required="required"></textarea>
+         </center>
+          <br>
+          <center>
+          <button type="submit">Submit</button>
+          <center>
+      </form>
+  </div>
+
+  <div class="report-form" id="reportForm">
+    <h2>Report News</h2>
+    <form method="POST" >
+      {% csrf_token %}
+       <center>
+        <textarea id="comment" name="comment" placeholder="action"  rows="4" cols="50" required="required"></textarea>
+       </center>
+        <br>
+        <center>
+        <button type="submit">Submit</button>
+        <center>
+    </form>
+</div>
+
+<script>
+  function showReportForm() {
+      // Show the report form when the flag icon is clicked
+      document.getElementById('reportForm').style.display = 'block';
+  }
+
+  function submitReport() {
+      // Add logic to submit the report (e.g., using AJAX)
+      alert('Report submitted successfully!');
+      // You may also want to hide the report form after submission
+      document.getElementById('reportForm').style.display = 'none';
+  }
+</script>
+
+
+
+
+<!-- Include Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<script>
+    function toggleActionForm({{i.id}}) {
+        var commentForm = document.getElementById('actionForm');
+        // Toggle the display property (show/hide the form)
+        actionForm.style.display = (actionForm.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
+  
+
+  <!-- Include Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <script>
+      function toggleCommentForm({{i.id}}) {
+          var commentForm = document.getElementById('commentForm');
+          // Toggle the display property (show/hide the form)
+          commentForm.style.display = (commentForm.style.display === 'none') ? 'block' : 'none';
+      }
+  </script>
+
+
+
+    
+    {% comment %} <i class="fas fa-thumbs-up" id="likeIcon" onclick="likePost()"></i>
+    <span id="likeCount">0</span> {% endcomment %}
+
+    <!-- Include Font Awesome CSS -->
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script>
+        // Check if the like and dislike counts are already stored in local storage
+        var likeCount = localStorage.getItem('likeCount') || 0;
+        var dislikeCount = localStorage.getItem('dislikeCount') || 0;
+
+        // Display the initial like and dislike counts
+        document.getElementById('likeCount').innerText = likeCount;
+        document.getElementById('dislikeCount').innerText = dislikeCount;
+
+        function likePost({{i.id}}) {
+            // Increment the like count
+            likeCount++;
+
+            // Update the like count display
+            document.getElementById('likeCount').innerText = likeCount;
+
+            // Store the updated like count in local storage
+            localStorage.setItem('likeCount', likeCount);
+        }
+
+        function dislikePost({{i.id}}) {
+            // Increment the dislike count
+            dislikeCount++;
+
+            // Update the dislike count display
+            document.getElementById('dislikeCount').innerText = dislikeCount;
+
+            // Store the updated dislike count in local storage
+            localStorage.setItem('dislikeCount', dislikeCount);
+        }
+    </script>
+  
+
+
+
+
+
+   {% endcomment %}
+ 
+{% endblock %}

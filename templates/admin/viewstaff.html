@@ -1,0 +1,47 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <center>
+    <button class="btn draw-border"><a href="/staffregister">Add staff</a></button>
+    </center>
+    {% for i in staff%}
+    <div class="card">
+       
+      <img src="/static/media/{{i.img}}" alt="Person" class="card__image">
+      <div style="text-align:left;padding-bottom: 10px; margin-bottom: 8px;">
+        <p>name:{{i.name}}</p>
+        <p>email:{{i.email}}</p>
+        <p>phone:{{i.phone}}</p>
+        <p>address:{{i.address}}</p>
+        </div>
+     
+       
+     
+     
+      <button class="btn draw-border"><a href="/admindeletestaff?sid={{i.id}}">Delete</a></button>
+     
+  
+    </div>
+    {% endfor %}
+    {% comment %} <div class="card">
+      <img src="https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no" alt="Person" class="card__image">
+      <p class="card__name">Murray Reeve</p>
+      
+     
+      <button class="btn draw-border">Follow</button>
+      <button class="btn draw-border">Message</button>
+    </div> {% endcomment %}
+    {% comment %} <div class="card">
+      <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
+      <p class="card__name">Bianca Serrano</p>
+      
+  
+      
+      
+      <button class="btn draw-border">Follow</button>
+      <button class="btn draw-border">Message</button>
+    </div> {% endcomment %}
+  </div>
+  
+{% endblock %}

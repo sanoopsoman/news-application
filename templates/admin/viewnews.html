@@ -1,0 +1,257 @@
+{% extends 'admin/adminbase1.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <center><h2>political News.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in politics %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  
+  <div class="container">
+    <center><h2>Entertainment news.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Business news</center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in business %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Corporate news.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Travel news.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Education.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in education %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Health News.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>Science News.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+  <div class="container">
+    <center><h2>sports News.</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <h6 class="card-title">{{i.description}}</h6>
+          
+        </div>
+      {% comment %} <a href="/staffupdatenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-success">update</a> {% endcomment %}
+      <a href="/staffdeletenews?sid={{i.sid.id}}&nid={{i.id}}" class="btn btn-danger">delete</a>
+         
+        </div>
+        
+      </div>
+  
+    
+      {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'commonbase.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" style="padding:10px;">
+    
+    <div class="row">
+        <div class="form-holder" style="width:100%;">
+            <div class="form-content" style="">
+                <div class="form-items">
+                    
+                    <form method="POST" enctype="multipart/form-data" >
+                        {% csrf_token %}
+
+                        <div class="col-md-12">
+                           <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                          
+                        </div><br>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                          
+                        </div> <br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="phone" placeholder="phone number" required>
+                          
+                        </div><br>
+                        <div class="col-md-12">
+                            <label>image:
+                            <input class="" type="file" name="img" required>
+                            
+                        </div><br>
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="address" rows="4" placeholder="Address" required="required"></textarea>
+                               
+                             {% comment %} <div class="valid-feedback">Email field is valid!</div>
+                             <div class="invalid-feedback">Email field cannot be blank!</div> {% endcomment %}
+                        </div><br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="qualification" placeholder="qualification" required>
+                             
+                        </div><br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="age" placeholder="Age" required>
+                            
+                        </div><br>
+                        
+
+
+                       {% comment %} <div class="col-md-12">
+                            <select class="form-select mt-3" required>
+                                  <option selected disabled value="">Position</option>
+                                  <option value="jweb">Junior Web Developer</option>
+                                  <option value="sweb">Senior Web Developer</option>
+                                  <option value="pmanager">Project Manager</option>
+                           </select>
+                            <div class="valid-feedback">You selected a position!</div>
+                            <div class="invalid-feedback">Please select a position!</div>
+                       </div> {% endcomment %}
+
+
+                       <div class="col-md-12">
+                          <input class="form-control" type="password" name="password" placeholder="Password" required>
+                          
+                       </div><br>
+
+
+                       <div class="col-md-12 mt-3">
+                        <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                           <div class="valid-feedback mv-up">You selected a gender!</div>
+                            <div class="invalid-feedback mv-up">Please select a gender!</div>
+                        </div><br>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                      <label class="form-check-label">I confirm that all data are correct</label>
+                     <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                    </div><br>
+              
+                        <center>
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

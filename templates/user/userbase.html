@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BizNews - Free News Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        /* Initially hide the form */
+        #commentForm {
+            display: none;
+            color: black;
+        }
+       
+            #likeIcon {
+                cursor: pointer;
+                color: red;
+            }
+    
+            #likeCount {
+                margin-left: 10px;
+            }
+            .interaction-icons {
+                cursor: pointer;
+                color: black;
+                margin-right: 20px; /* Adjust this value to control the space between icons */
+            }
+    
+            #likeCount, #dislikeCount {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+    
+                /* Style the flag icon */
+                .flag-icon {
+                    cursor: pointer;
+                    color: #d9534f; /* Set the color for the flag icon */
+                    font-size: 24px; /* Adjust the font size */
+                }
+        
+                /* Style the report form (initially hidden) */
+                .report-form {
+                    display: none;
+                    margin-top: 10px;
+                }
+                
+            
+        </style>
+    
+</head>
+
+<body>
+  
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-white font-weight-normal">News</span></h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="/userhome" class="nav-item nav-link">Home</a>
+                    <a href="/userviewcategory" class="nav-item nav-link">Category</a>
+                  "
+                    <a href="/logout" class="nav-item nav-link">Logout</a>
+                </div>
+                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                    <input type="text" class="form-control border-0" placeholder="Keyword">
+                    <div class="input-group-append">
+                        <button class="input-group-text bg-primary text-dark border-0 px-3"><i
+                                class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+   
+    <!-- Footer Start -->
+    
+       
+    <div class="container-fluid" style="background: #111111;">
+        <p class="m-0 text-center">&copy; . All Rights Reserved. 
+		
+		<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+		Design by HTML Codex</a><br>
+        Distributed by ThemeWagon</a>
+    </p>
+    </div>
+
+
+    <!-- Back to Top -->
+    
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

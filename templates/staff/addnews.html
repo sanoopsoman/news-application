@@ -1,0 +1,91 @@
+{% extends 'staff/staffbase.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container" style="width:70%;">
+    <center><h3> Add News..</h3></center>
+    <br>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control p-4" name="name" placeholder="news name" required="required"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form-control"name="category">Category
+                    <option>politics</option>
+                    <option>business</option>
+                    <option>education</option>
+                    <option>sports</option>
+                    <option>corporate</option>
+                    <option>health</option>
+                    <option>travel</option>
+                    <option>science</option>
+                    <option>entertainment</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                
+                <input type="file" class="form-control p-4" name="img" required="required"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="date" class="form-control p-4"  name="date" placeholder="enter the age" required="required"/>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="time" class="form-control p-4" name="time" required="required"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select name="district" class="form-control">
+                    <option>Trivandrum</option>
+                    <option>kollam</option>
+                    <option>pathanamthitta</option>
+                    <option>Alapuzha</option>
+                    <option>kottayam</option>
+                    <option>idukki</option>
+                    <option>ernakulam</option>
+                    <option>thrissur</option>
+                    <option>malappuram</option>
+                    <option>kozhikode</option>
+                    <option>wayanad</option>
+                    <option>kannur</option>
+                    <option>kasargod</option>
+                    <option>palakkad</option>
+                    <option>all</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <textarea class="form-control" name="discription" rows="4" placeholder="Message" required="required"></textarea>
+            </div>
+        </div>
+       
+</div>
+</div>
+<center>
+<input type="submit" class="btn btn-primary font-weight-semi-bold px-4" style="height: 50px;" value="Add news">
+</center>
+</form>
+</div>
+<br>
+<br>
+<br><br>
+{% endblock %}

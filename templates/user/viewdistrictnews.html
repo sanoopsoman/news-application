@@ -1,0 +1,28 @@
+{% extends 'user/userbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <center><h2>News..</h2></center>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    
+    {% for i in news %}
+   
+    <div class="col">
+      <div class="card h-100">
+       
+       <a href="/userviewnewsdetails?id={{i.id}}"> <img src="/static/media/{{i.img}}" class="card-img-top" style="height:300px;" alt="Palm Springs Road"/></a>
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          
+        </div>
+      
+    </div>
+      
+        </div>
+        {% endfor %}
+      </div>
+ 
+{% endblock %}
